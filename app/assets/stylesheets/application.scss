@@ -1,14 +1,22 @@
 @import 'txt';
 
 
-.brand {
-  display: block;
-  height: 40px;
-  img {
-    float: left;
+
+#nav {
+  height: 4.8em;
+  ul {
+    height: 4.8em;
   }
 }
 
-#nav {
-  height: 4em;
+.brand {
+  display: inline-block;
+  position: relative;
+  height: 10px;
+  width: 280px;
+  img {
+    position: absolute;
+    top: -26px;
+    left: 0;
+  }
 }
