@@ -1,6 +1,8 @@
 @import 'txt';
 
-
+.text-center {
+  text-align: center;
+}
 
 #nav {
   height: 4.8em;
@@ -18,5 +20,57 @@
     position: absolute;
     top: -26px;
     left: 0;
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.blueprint-card {
+  width: 420px;
+  margin: 20px;
+  padding: 14px 20px;
+  background: asset-url('overlay.png'),
+    linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    linear-gradient(#b1ddab, #b1ddab);
+  .title {
+    color: #6B7770;
+    border-bottom: 6px solid #B1DDAB;
+  }
+  .description {
+    font-family: 'Allerta Stencil', sans-serif ;
+    padding-left: 30px;
+  }
+  .user-stories li {
+    margin: 6px 0;
+    padding: 4px 0;
+    border-top: 1px solid #b1ddab;
+  }
+  a {
+    color: #B1DDAB;
+  }
+}
+
+
+.hidden {
+  display: none;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+
+
+@media screen and (min-width: 737px) {
+  #main-wrapper {
+    border-top-width: 4.8em;
+  }
+  #nav li a, #nav li span {
+    padding: 1em 1.5em 1.2em 1.5em;
   }
 }

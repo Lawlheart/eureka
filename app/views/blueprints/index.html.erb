@@ -1,11 +1,5 @@
-<h1>Hello World!</h1>
-
-<% @blueprints.each do |blueprint| %>
-  <h3><%= link_to "#{blueprint.name}", blueprint_path(blueprint) %></h3>
-  <h4><%= blueprint.description %></h4>
-  <h4>Source: <a href="<%= blueprint.source_url %>"><%= blueprint.source %></a></h4>
-    <a href="<%= blueprint.demo_url %>" class="btn">Demo</a>
-  <% blueprint.stories.each do |story| %>
-    <p><%= story.content %></p>
+<div class="flex-container">
+  <% @blueprints.each do |blueprint| %>
+    <%= render 'blueprints/blueprint_card', blueprint: blueprint %>
   <% end %>
-<% end %>
+</div>

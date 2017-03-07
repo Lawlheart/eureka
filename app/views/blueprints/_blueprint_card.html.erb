@@ -1,0 +1,14 @@
+<div class="blueprint-card">
+  <h2 class="title"><%= link_to "#{blueprint.name}", blueprint_path(blueprint) %></h2>
+  <p class="description"><%= blueprint.description %></p>
+  <h4 class="text-center">User Stories</h4>
+  <ul class="user-stories">
+    <% blueprint.stories.each do |story| %>
+        <li><%= story.content %></li>
+    <% end %>
+  </ul>
+  <% if blueprint.source && blueprint.source_url %>
+    <h4>Source <a href="<%= blueprint.source_url %>" target="_blank"><%= blueprint.source %></a></h4>
+  <% end %>
+  <h4>Demo <a href="<%= blueprint.demo_url %>" target="_blank">Link</a></h4>
+</div>
