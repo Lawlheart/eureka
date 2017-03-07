@@ -9,6 +9,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="page-wrapper">
+      <%= render 'layouts/nav' %>
+      <%= render 'layouts/header' %>
+
+      <div id="main-wrapper">
+        <div id="main" class="container">
+          <p class="alert"><%= flash[:alert] %></p>
+          <p class="notice"><%= flash[:notice] %></p>
+          <%= yield %>
+        </div>
+      </div>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

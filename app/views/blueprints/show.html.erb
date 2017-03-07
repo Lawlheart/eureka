@@ -1,0 +1,8 @@
+<h1><%= @blueprint.name %></h1>
+
+<h4><%= @blueprint.description %></h4>
+<h4>Source: <a href="<%= @blueprint.source_url %>"><%= @blueprint.source %></a></h4>
+<a href="<%= @blueprint.demo_url %>" class="btn">Demo</a>
+<% @blueprint.stories.each do |story| %>
+    <p><%= story.content %></p>
+<% end %>
