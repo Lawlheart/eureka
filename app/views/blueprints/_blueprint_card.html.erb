@@ -7,8 +7,8 @@
         <li><%= story.content %></li>
     <% end %>
   </ul>
+  <a href="<%= blueprint.demo_url %>" target="_blank" class="button">Demo</a>
   <% if blueprint.source && blueprint.source_url %>
-    <h4>Source <a href="<%= blueprint.source_url %>" target="_blank"><%= blueprint.source %></a></h4>
+    <a href="<%= blueprint.source_url %>" target="_blank" class="button source">Source</a>
   <% end %>
-  <h4>Demo <a href="<%= blueprint.demo_url %>" target="_blank">Link</a></h4>
 </div>

@@ -8,8 +8,18 @@
     <li class="<%= 'current' if current_page?(root_path) %>"><%= link_to 'Home', root_path %></li>
     <li class="<%= 'current' if current_page?(blueprints_path) %>"><%= link_to 'Blueprints', blueprints_path %></li>
 
-    <li><a href="left-sidebar.html">Left Sidebar</a></li>
-    <li><a href="right-sidebar.html">Right Sidebar</a></li>
-    <li><a href="no-sidebar.html">No Sidebar</a></li>
+    <% if current_user %>
+        <li class="<%= 'current' if current_page?(edit_user_registration_path) %>">
+          <%= link_to 'Settings', edit_user_registration_path %>
+        </li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+        <li class="<%= 'current' if current_page?(new_user_registration_path) %>">
+          <%= link_to 'Register', new_user_registration_path %>
+        </li>
+        <li class="<%= 'current' if current_page?(new_user_session_path) %>">
+          <%= link_to 'Login', new_user_session_path %>
+        </li>
+    <% end %>
   </ul>
 </nav>

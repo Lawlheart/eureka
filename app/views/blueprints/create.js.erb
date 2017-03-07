@@ -1,0 +1,3 @@
+$("#new-blueprint-form").remove();
+$('#new-blueprint').show();
+$('#blueprints').prepend("<%= j render 'blueprints/blueprint_card', blueprint: @blueprint %>");
