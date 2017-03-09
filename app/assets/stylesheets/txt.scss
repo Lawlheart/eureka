@@ -599,7 +599,7 @@
 
 	#banner-wrapper {
 		position: relative;
-		background-image: image-url('overlay.png'), image-url('overlay.png'), url('../../images/banner.jpg');
+		background-image: image-url('overlay.png'), image-url('overlay.png'), image-url('banner.jpg');
 		background-position: top left, top left, center center;
 		background-repeat: repeat, repeat, no-repeat;
 		background-size: auto, auto, cover;

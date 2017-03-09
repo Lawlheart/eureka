@@ -2,15 +2,15 @@
   <h2 class="title"><%= link_to "#{blueprint.name}", blueprint_path(blueprint) %></h2>
   <p class="description"><%= blueprint.description %></p>
   <h4 class="text-center">User Stories</h4>
-  <div class="text-center">
-    <button class="toggle-user-stories">User Stories</button>
-  </div>
-
   <ul class="user-stories animated">
-    <% blueprint.stories.each do |story| %>
+    <% blueprint.stories.to_a.slice(0, 3).each do |story| %>
         <li><%= story.content %></li>
     <% end %>
+    <% if blueprint.stories.length > 3 %>
+      <li><i>...<%= blueprint.stories.length - 3 %> more.</i></li>
+    <% end %>
   </ul>
+  <%= link_to 'Details', blueprint_path(blueprint), class: 'button' %>
   <a href="<%= blueprint.demo_url %>" target="_blank" class="button">Demo</a>
   <% if blueprint.source && blueprint.source_url %>
     <a href="<%= blueprint.source_url %>" target="_blank" class="button source">Source</a>
