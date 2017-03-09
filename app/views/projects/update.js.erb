@@ -1,0 +1,4 @@
+$("#project-form").remove();
+$('.project-detail').remove();
+$('.edit-mode').toggleClass('hidden');
+$('.project').append("<%= j render 'projects/project_detail', blueprint: @project.blueprint, project: @project %>");

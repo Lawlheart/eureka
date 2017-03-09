@@ -1,15 +1,18 @@
-<%= form_for [blueprint, project] do |f| %>
-  <div class="group">
-    <%= f.label :demo_url %>
-    <%= f.text_field :demo_url %>
-  </div>
-  <div class="group">
-    <%= f.label :image_url %>
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="group">
-    <%= f.label :status %>
-    <%= f.text_field :status %>
-  </div>
-    <%= f.submit %>
-<% end %>
+<div class="form-container" id="project-form">
+  <%= form_for [blueprint, project], remote: true do |f| %>
+    <div class="group">
+      <%= f.label :demo_url %>
+      <%= f.text_field :demo_url %>
+    </div>
+    <div class="group">
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %>
+    </div>
+    <div class="group">
+      <%= f.label :status %>
+      <%= f.text_field :status %>
+    </div>
+      <%= f.submit %>
+      <a class="button close-forms red">Close</a>
+  <% end %>
+</div>

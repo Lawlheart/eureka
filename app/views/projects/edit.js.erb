@@ -1,3 +1,2 @@
-$("#blueprint-form").remove();
-$('.description').after($('<%= j render "projects/form", project: @project, blueprint: @project.blueprint %>'));
-$('.edit-mode').toggleClass('hidden');
+$("#project-form").remove();
+$('.project .card-buttons').after($('<%= j render "projects/form", project: @project, blueprint: @project.blueprint %>'));

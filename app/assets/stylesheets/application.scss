@@ -68,7 +68,7 @@ $alert-color: #FAA4AA;
   left: 10px;
 }
 
-.blueprint-card, .blueprint-detail, .project-card {
+.blueprint-card, .blueprint-detail, .project-card, .project-detail {
   @extend %grid-paper;
 
   .title {
@@ -166,4 +166,25 @@ input[type=submit] {
   .fa-briefcase:hover {
     background-color: #1B5E20;
   }
+}
+
+.project {
+  margin-right: 60px;
+  .project-detail {
+    width: 480px;
+    padding-bottom: 60px;
+    position: relative;
+  }
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  a {
+    color: darken($primary-color, 10%);
+  }
+}
+
+
+a.button {
+  color: #fff;
 }

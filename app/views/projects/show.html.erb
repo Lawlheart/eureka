@@ -1,1 +1,10 @@
-<%= render 'projects/project_detail', blueprint: @project.blueprint, project: @project %>
+<div class="flex-container">
+  <div class="project">
+    <h2 class="text-center">Project</h2>
+    <%= render 'projects/project_detail', blueprint: @project.blueprint, project: @project %>
+  </div>
+  <div class="blueprint">
+    <h2 class="text-center">Blueprint</h2>
+    <%= render 'blueprints/blueprint_card', blueprint: @project.blueprint %>
+  </div>
+</div>

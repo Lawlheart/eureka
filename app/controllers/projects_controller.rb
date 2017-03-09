@@ -21,6 +21,9 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    if @project.user_id != current_user.id
+      redirect_to blueprints_path
+    end
   end
 
   def update
