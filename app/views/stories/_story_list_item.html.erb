@@ -1,0 +1,7 @@
+<li id="user-story-<%= story.id %>">
+  <% if current_user && current_user.id == blueprint.user_id %>
+    <%= link_to '-', blueprint_story_path(blueprint, story), class: 'button red small-circle edit-mode hidden',
+              remote: true, data: {method: 'delete', confirm: 'Are you sure?'}%>
+  <% end %>
+  <%= story.content %>
+</li>

@@ -1,0 +1,19 @@
+<div class="blueprint-detail container">
+  <h2 class="title"><%= @blueprint.name %></h2>
+  <p class="description"><%= @blueprint.description %></p>
+  <h4 class="text-center">User Stories</h4>
+  <ul class="user-stories">
+    <% @blueprint.stories.each do |story| %>
+        <%= render 'stories/story_list_item', blueprint: @blueprint, story: story %>
+    <% end %>
+  </ul>
+  <a href="<%= @blueprint.demo_url %>" target="_blank" class="button">Demo</a>
+  <% if @blueprint.source && @blueprint.source_url %>
+      <a href="<%= @blueprint.source_url %>" target="_blank" class="button source">Source</a>
+  <% end %>
+  <% if current_user && @blueprint.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_blueprint_path, remote: true, class: 'button edit-mode' %>
+      <button id="edit-mode-button" class="close-forms edit-mode hidden red">Close Edit</button>
+      <%= link_to 'Add User Story', new_blueprint_story_path(@blueprint), id: 'new-user-story-button', class: 'button edit-mode hidden', remote: true %>
+  <% end %>
+</div>

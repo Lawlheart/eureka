@@ -1,0 +1,6 @@
+console.log("TEST");
+
+$("#blueprint-form").remove();
+$('.blueprint-detail').remove();
+$('.edit-mode').toggleClass('hidden');
+$('#main').append("<%= j render 'blueprints/blueprint_detail' %>");

@@ -1,2 +1,3 @@
-$('.user-stories').append('<li><%= @story.content %></li>');
-$('#new-user-story').html('');
+$('.user-stories').append('<%= j render 'stories/story_list_item', blueprint: @blueprint, story: @story %>');
+$('#user-story-<%= @story.id %> a').removeClass('hidden');
+$("#story-form").remove();

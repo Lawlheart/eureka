@@ -31,6 +31,9 @@ $alert-color: #FAA4AA;
     top: -32px;
     left: 0;
   }
+  &:hover {
+     top: 0 !important;
+  }
 }
 
 .flex-container {
@@ -132,7 +135,13 @@ input[type=submit] {
   margin-top: 10px;
 }
 
-.button.red {
+.button.red, button.red {
   background-color: $alert-color;
 }
 
+.button.small-circle {
+  padding: .15em .55em;
+  height: 26px;
+  border-radius: 50%;
+  width: 26px;
+}

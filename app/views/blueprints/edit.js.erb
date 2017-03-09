@@ -1,1 +1,3 @@
+$("#blueprint-form").remove();
 $('.description').after($('<%= j render "blueprints/form" %>'));
+$('.edit-mode').toggleClass('hidden');

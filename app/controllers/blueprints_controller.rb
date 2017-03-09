@@ -32,7 +32,9 @@ class BlueprintsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @blueprint.update(blueprint_params)
+      updateStatus = @blueprint.update(blueprint_params)
+      p updateStatus
+      if updateStatus
         format.html {redirect_to blueprint_path(@blueprint), notice: 'Blueprint Successfully Updated.'}
         format.js
       end
