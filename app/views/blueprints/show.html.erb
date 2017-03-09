@@ -11,4 +11,9 @@
   <% if @blueprint.source && @blueprint.source_url %>
       <a href="<%= @blueprint.source_url %>" target="_blank" class="button source">Source</a>
   <% end %>
+  <% if current_user && @blueprint.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_blueprint_path, remote: true, class: 'button' %>
+    <%= link_to 'Add User Story', new_blueprint_story_path(@blueprint), id: 'new-user-story-button', class: 'button', remote: true %>
+    <div id="new-user-story"></div>
+  <% end %>
 </div>

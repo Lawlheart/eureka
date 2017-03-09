@@ -1,3 +1,5 @@
+<%= render 'layouts/header', title: 'User', subtitle: 'Settings' %>
+
 <div class="form-container">
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
@@ -7,6 +9,11 @@
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :username %><br />
+        <%= f.text_field :username %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

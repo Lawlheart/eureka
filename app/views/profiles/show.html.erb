@@ -1,0 +1,16 @@
+
+<header id="header">
+  <div class="logo container">
+    <div>
+      <h1><a href="index.html" id="logo"><%= @user.username %></a></h1>
+      <p> | Blueprints</p>
+    </div>
+  </div>
+</header>
+
+
+<div class="flex-container" id="blueprints">
+  <% @user.blueprints.each do |blueprint| %>
+      <%= render 'blueprints/blueprint_card', blueprint: blueprint %>
+  <% end %>
+</div>

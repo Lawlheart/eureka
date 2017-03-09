@@ -25,10 +25,21 @@ class BlueprintsController < ApplicationController
         format.js { redirect_back(fallback_location: blueprints_path, notice: 'There was an error.')}
       end
     end
-
   end
 
-private
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @blueprint.update(blueprint_params)
+        format.html {redirect_to blueprint_path(@blueprint), notice: 'Blueprint Successfully Updated.'}
+        format.js
+      end
+    end
+  end
+
+  private
   def get_blueprint
     @blueprint = Blueprint.find(params[:id])
   end

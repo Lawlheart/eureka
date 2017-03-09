@@ -1,4 +1,4 @@
-<div class="form-container" id="new-blueprint-form">
+<div class="form-container" id="blueprint-form">
   <%= form_for @blueprint, remote: true do |f| %>
 
       <div class="group">
@@ -27,5 +27,6 @@
       </div>
 
       <%= f.submit %>
+      <a class="button close-forms red">Close</a>
   <% end %>
 </div>
