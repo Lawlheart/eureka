@@ -1,4 +1,4 @@
-<%= form_for blueprint, project do |f| %>
+<%= form_for [blueprint, project] do |f| %>
   <div class="group">
     <%= f.label :demo_url %>
     <%= f.text_field :demo_url %>
@@ -11,4 +11,5 @@
     <%= f.label :status %>
     <%= f.text_field :status %>
   </div>
+    <%= f.submit %>
 <% end %>

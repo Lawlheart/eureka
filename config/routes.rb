@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :blueprints do
     resources :stories
-    resources :projects, only: [:create, :edit]
+    resources :projects, only: [:create, :edit, :update]
   end
 
   resource :profile, only: [:show]

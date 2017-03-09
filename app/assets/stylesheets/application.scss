@@ -57,13 +57,18 @@ $alert-color: #FAA4AA;
   padding-bottom: 60px;
 }
 
+.project-card {
+  position: relative;
+  padding-bottom: 60px;
+}
+
 .card-buttons {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
 
-.blueprint-card, .blueprint-detail {
+.blueprint-card, .blueprint-detail, .project-card {
   @extend %grid-paper;
 
   .title {

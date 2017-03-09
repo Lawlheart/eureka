@@ -1,13 +1,12 @@
+<%= render 'layouts/header', title: @user.username, subtitle: '| Projects' %>
 
-<header id="header">
-  <div class="logo container">
-    <div>
-      <h1><a href="index.html" id="logo"><%= @user.username %></a></h1>
-      <p> | Blueprints</p>
-    </div>
-  </div>
-</header>
+<div class="flex-container" id="projects">
+  <% @user.projects.each do |project| %>
+      <%= render 'projects/project_card', project: project, blueprint: project.blueprint %>
+  <% end %>
+</div>
 
+<%= render 'layouts/header', title: @user.username, subtitle: '| Blueprints' %>
 
 <div class="flex-container" id="blueprints">
   <% @user.blueprints.each do |blueprint| %>

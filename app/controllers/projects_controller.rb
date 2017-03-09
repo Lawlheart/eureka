@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :get_blueprint, only: [:create]
-  before_action :get_project, only: [:show]
+  before_action :get_blueprint, only: [:create, :edit, :update]
+  before_action :get_project, only: [:show, :edit, :update]
   before_action :authenticate_user!
   def index
 
@@ -18,11 +18,21 @@ class ProjectsController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
+  end
 
+  def update
+    respond_to do |format|
+      if @project.update(project_params)
+        format.html { redirect_to project_path(@project), notice: 'Project Updated Successfully.' }
+        format.js
+      else
+        format.html { redirect_to project_path(@project), alert: 'Something went wrong.' }
+        format.js
+      end
+    end
   end
 
 private
