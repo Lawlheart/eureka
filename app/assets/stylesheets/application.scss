@@ -153,3 +153,12 @@ input[type=submit] {
   border-radius: 50%;
   width: 26px;
 }
+
+.contact {
+  .fa-github:hover {
+    background-color: #24292E;
+  }
+  .fa-briefcase:hover {
+    background-color: #1B5E20;
+  }
+}

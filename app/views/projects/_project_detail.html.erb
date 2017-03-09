@@ -11,10 +11,8 @@
   <% if @blueprint.source && @blueprint.source_url %>
       <a href="<%= @blueprint.source_url %>" target="_blank" class="button source">Source</a>
   <% end %>
-  <% if current_user && @blueprint.user_id == current_user.id %>
-      <%= link_to 'Edit', edit_blueprint_path, remote: true, class: 'button edit-mode' %>
+  <% if current_user && @project.user_id == current_user.id %>
+      <%= link_to 'Add Solution', edit_blueprint_project_path(@blueprint), remote: true, class: 'button edit-mode' %>
       <button id="edit-mode-button" class="close-forms edit-mode hidden red">Close Edit</button>
-      <%= link_to 'Add User Story', new_blueprint_story_path(@blueprint), id: 'new-user-story-button', class: 'button edit-mode hidden', remote: true %>
   <% end %>
-  <%= link_to 'Start Project', blueprint_projects_path(@blueprint), method: :post, class: 'button' %>
 </div>

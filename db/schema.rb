@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170308231517) do
+ActiveRecord::Schema.define(version: 20170309095512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20170308231517) do
     t.string  "source_url"
     t.string  "demo_url"
     t.integer "user_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.integer "blueprint_id"
+    t.integer "user_id"
+    t.string  "demo_url",     default: ""
+    t.string  "image_url",    default: ""
+    t.string  "status",       default: ""
   end
 
   create_table "stories", force: :cascade do |t|
