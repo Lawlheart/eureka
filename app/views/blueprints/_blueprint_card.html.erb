@@ -10,9 +10,11 @@
       <li><i>...<%= blueprint.stories.length - 3 %> more.</i></li>
     <% end %>
   </ul>
-  <%= link_to 'Details', blueprint_path(blueprint), class: 'button' %>
-  <a href="<%= blueprint.demo_url %>" target="_blank" class="button">Demo</a>
-  <% if blueprint.source && blueprint.source_url %>
-    <a href="<%= blueprint.source_url %>" target="_blank" class="button source">Source</a>
-  <% end %>
+  <div class="card-buttons">
+    <%= link_to 'Details', blueprint_path(blueprint), class: 'button' %>
+    <a href="<%= blueprint.demo_url %>" target="_blank" class="button">Demo</a>
+    <% if blueprint.source && blueprint.source_url %>
+        <a href="<%= blueprint.source_url %>" target="_blank" class="button source">Source</a>
+    <% end %>
+  </div>
 </div>
