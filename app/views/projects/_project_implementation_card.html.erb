@@ -1,0 +1,11 @@
+<div class="project-card">
+  <h2 class="title"><%= project.user.username || 'User' %></h2>
+  <h3>Demo Url:</h3>
+  <h4><a href="<%= project.demo_url %>"><%= project.demo_url %></a></h4>
+  <h3>Image</h3>
+  <% if project.image_url != '' %>
+      <img src="<%= project.image_url  %>" alt="">
+  <% else %>
+      <%= image_tag 'default.jpg' %>
+  <% end %>
+</div>

@@ -58,6 +58,8 @@ $alert-color: #FAA4AA;
   img {
     width: 100%;
     border-radius: 8px;
+    object-fit: cover;
+    height: 250px;
   }
   a {
     color: darken($primary-color, 10%);

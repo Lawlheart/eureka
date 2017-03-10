@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :get_blueprint, only: [:create, :edit, :update]
   before_action :get_project, only: [:show, :edit, :update]
+  before_action :check_auth, only: [:show, :edit, :update]
   before_action :authenticate_user!
   def index
 
@@ -21,9 +22,6 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    if @project.user_id != current_user.id
-      redirect_to blueprints_path
-    end
   end
 
   def update
@@ -46,6 +44,12 @@ private
   def get_project
     @project = Project.find(params[:id])
     @blueprint = @project.blueprint
+  end
+
+  def check_auth
+    if @project.user_id != current_user.id
+      redirect_to blueprints_path
+    end
   end
 
   def project_params

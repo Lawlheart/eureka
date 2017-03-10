@@ -1,1 +1,9 @@
 <%= render 'blueprints/blueprint_detail' %>
+
+<h2 class="text-center">Implementations</h2>
+
+<div class="flex-container">
+  <% @blueprint.projects.each do |project| %>
+    <%= render 'projects/project_implementation_card', project: project %>
+  <% end %>
+</div>
