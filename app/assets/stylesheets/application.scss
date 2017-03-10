@@ -1,13 +1,18 @@
 @import 'txt';
 
 $primary-color: #B1DDAB;
+$primary-color-dark: #57A24B;
 $alert-color: #FAA4AA;
 
 %grid-paper {
   padding: 14px 20px;
   background: asset-url('overlay.png'),
     linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-    linear-gradient($primary-color, $primary-color);
+    linear-gradient($primary-color-dark, $primary-color-dark);
+}
+
+#main-wrapper {
+  border-color: $primary-color-dark;
 }
 
 .text-center {
